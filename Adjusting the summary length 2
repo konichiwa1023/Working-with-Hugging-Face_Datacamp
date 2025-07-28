@@ -1,0 +1,8 @@
+# Repeat for a long summarizer
+long_summarizer = pipeline(task="summarization", model="cnicu/t5-small-booksum", min_new_tokens=50, max_new_tokens=150)
+
+# Summarize the input text
+long_summary_text = long_summarizer(original_text)
+
+# Print the long summary
+print(long_summary_text[0]["summary_text"])
